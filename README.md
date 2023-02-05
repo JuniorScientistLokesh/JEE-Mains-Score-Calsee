@@ -10,4 +10,4 @@ This program will calculate and show simple stats about JEE result from answer k
 press submit and you'll get your result calculated
 
 # preview
-![alt text](https://github.com/JuniorScientistLokesh/JEE-Mains-Score-Calsee/blob/main/python_UxlVvovuPb.png)
+![alt text](https://github.com/Lokesh-Spectre/JEE-Mains-Score-Calsee/blob/main/python_UxlVvovuPb.png)
