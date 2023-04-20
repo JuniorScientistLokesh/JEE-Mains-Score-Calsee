@@ -1,5 +1,11 @@
 # JEE-Mains-Score-Calsee
 This program will calculate and show simple stats about JEE result from answer key and your answer, which is available online before the official result comes out.
+# How to run
+#### Download the repo .zip, extract, and open command prompt folder, then execute these commands
+```
+pip install -r requirements.txt
+python main.py
+```
 
 # How to use
 #### 1.Go to nta jee website and select Answer-key-challange under Candidate-Activity.
