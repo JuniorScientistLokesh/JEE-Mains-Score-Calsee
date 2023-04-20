@@ -7,11 +7,11 @@ from itertools import count
 
 def MCQ(f):
     data = [f.readline() for x in range(12)]
-    q_type = data[4].partition(":")[-1]
-    que_ID = int(data[5].partition(':')[-1])
+    q_type = data[4].partition(":")[-1].strip()
+    que_ID = int(data[5].partition(':')[-1].strip())
     if 'Not ' not in data[10]:
-        choice = int(data[-1].partition(':')[-1])
-        opt_ID = int(data[5 + choice].partition(':')[-1])
+        choice = int(data[-1].partition(':')[-1].strip())
+        opt_ID = int(data[5 + choice].partition(':')[-1].strip())
     else:
         opt_ID = None
     return {que_ID: opt_ID}
@@ -19,9 +19,12 @@ def MCQ(f):
 
 def SA(f):
     data = [f.readline() for _ in range(4)]
-    que_ID = int(data[2].partition(':')[-1])
+    try:
+        que_ID = int(data[2].partition(':')[-1].strip())
+    except: 
+        print('\n'.join(data))
     if 'Not ' not in data[3]:
-        answer = int(data[0].partition(':')[-1])
+        answer = float(data[0].partition(':')[-1].strip())
     else:
         answer = None
     return {que_ID: answer}
@@ -56,7 +59,7 @@ def getAnswerkey(path):
         for line in f.readlines():
             if line.startswith('B TECH'):
                 line = line.split('\t')
-                key[int(line[2])] = int(line[3])
+                key[int(line[1])] = int(line[2])
     return key
 
 
