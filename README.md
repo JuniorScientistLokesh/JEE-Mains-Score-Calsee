@@ -8,6 +8,6 @@ This program will calculate and show simple stats about JEE result from answer k
 #### 4.open the answer key
 #### Copy the contents of the pages (ctrl+a, ctrl+c) and paste it in proper text box of JEE-Mains-Score-Calsee
 press submit and you'll get your result calculated
-
+Errors are diverted to 'error.log' file
 # preview
 ![alt text](https://github.com/Lokesh-Spectre/JEE-Mains-Score-Calsee/blob/main/python_UxlVvovuPb.png)
