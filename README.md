@@ -15,5 +15,8 @@ python main.py
 #### Copy the contents of the pages (ctrl+a, ctrl+c) and paste it in proper text box of JEE-Mains-Score-Calsee
 press submit and you'll get your result calculated
 Errors are diverted to 'error.log' file
+
+# DOWNLOAD EXE 
+https://drive.google.com/file/d/1gO3sfSrPGoNt9vWOTG2mIjm6PyUmgwXk/view?usp=share_link
 # preview
 ![alt text](https://github.com/Lokesh-Spectre/JEE-Mains-Score-Calsee/blob/main/python_UxlVvovuPb.png)
