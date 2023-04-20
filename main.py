@@ -3,8 +3,8 @@ from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QWidget, QPushButton, QGridLayout
 import qdarktheme
 from itertools import count
-
-
+import traceback
+from datetime import datetime
 def MCQ(f):
     data = [f.readline() for x in range(12)]
     q_type = data[4].partition(":")[-1].strip()
@@ -146,21 +146,28 @@ class MainWidget(QWidget):
         self.layout.addWidget(self.button_submit, 1, 0)
 
     def submitAction(self):
-        with open('MyAnswers', 'w') as f:
-            f.write(self.LTEdit.toPlainText())
-        with open('AnswerKey', 'w') as f:
-            f.write(self.RTEdit.toPlainText())
-        data = getData('MyAnswers')
-        key = getAnswerkey('AnswerKey')
-        text_L, text_R = calcMarks(data, key)
-        self.LTEdit.clear()
-        self.RTEdit.clear()
-        self.LTEdit.setText(text_L)
-        self.RTEdit.setText(text_R)
-        self.LTEdit.setReadOnly(True)
-        self.RTEdit.setReadOnly(True)
-        self.button_submit.setText('Reset')
-        self.button_submit.clicked.connect(self.reset)
+        try:
+            with open('MyAnswers', 'w') as f:
+                f.write(self.LTEdit.toPlainText())
+            with open('AnswerKey', 'w') as f:
+                f.write(self.RTEdit.toPlainText())
+            data = getData('MyAnswers')
+            key = getAnswerkey('AnswerKey')
+            text_L, text_R = calcMarks(data, key)
+            self.LTEdit.clear()
+            self.RTEdit.clear()
+            self.LTEdit.setText(text_L)
+            self.RTEdit.setText(text_R)
+            self.LTEdit.setReadOnly(True)
+            self.RTEdit.setReadOnly(True)
+            self.button_submit.setText('Reset')
+            self.button_submit.clicked.connect(self.reset)
+        except Exception as e:
+            with open('error.log','a') as f:
+                f.write('====='+ str(datetime.now())+'=====\n')
+                f.write(traceback.format_exc())
+                f.write('====================================')
+
 
     def reset(self):
         self.LTEdit.clear()
