@@ -1,3 +1,5 @@
 This is some sample string, which i use
 as dummy file, in order to learn git 
 commands
+
+Some extra lines to be updated
